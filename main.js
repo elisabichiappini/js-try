@@ -30,3 +30,12 @@ function massimo(arr) {
 console.log(massimo(nums));
 
 //Dato un array, restituisci un nuovo array con gli elementi in ordine inverso.
+const result4 = (arr) => {
+    const inverso = [];
+    for(let i = arr.length - 1; i >= 0; i--) {
+        inverso.push(arr[i]);
+    }
+    return inverso;
+}
+
+console.log(result4([1,2,3,4]))
