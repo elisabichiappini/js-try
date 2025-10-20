@@ -1,7 +1,12 @@
 'use strict';
-const nums = [2, 4, 7, 8, 8];
+const nums = [2, 4, 7, 10, 8];
 const nums1 = [-2, 4, -7, 3];
 const double = [2, 5, 5, 10];
+const obj = [
+    {valore: 10},
+    {valore: 3},
+    {valore: 4}
+];
 
 //Calcola la media dei cubi dei numeri di un array.
 const result = (arr) => {
@@ -50,11 +55,10 @@ const result4 = (arr) => [...new Set(arr)];
 console.log(result4(double));
 
 //Dato un testo, restituisci quante vocali contiene.
-
 const testo = 'Ciao sono elisa';
 const vocali = ['a', 'e', 'i', 'o', 'u'];
 const result5 = (str) => {
-    let contatore = 0;
+    let contatore = 0;  
     for (let c of str) {
         if (vocali.includes(c)) {
             contatore++;
@@ -63,3 +67,31 @@ const result5 = (str) => {
     return contatore;
 }
 console.log(result5(testo));
+
+//Dato un array di oggetti come { valore: 10 }, somma tutti i campi valore.
+const result6 = (arr) => {
+    return arr.reduce((acc, curr) => acc + curr.valore, 0);
+}
+console.log(result6(obj))
+
+//Dato un array, restituisci un nuovo array con ogni elemento al quadrato.
+const result7 = (arr) => {
+    return arr.map((n) => n ** 2);
+}
+console.log(result7(nums));
+
+//Dato un array, trova il secondo valore più grande (senza usare sort direttamente).
+const result8 = (arr) => {
+    let max = -Infinity;
+    let secondo = -Infinity;
+    for(let n of arr) {
+        if(n > max) {
+            secondo = max;
+            max = n;
+        } else if (n > secondo && max > n){
+            secondo = n;
+        }
+    }
+    return secondo;
+}
+console.log(result8(nums));
