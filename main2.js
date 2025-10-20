@@ -1,6 +1,8 @@
 'use strict';
 const nums = [2, 4, 7, 8, 8];
 const nums1 = [-2, 4, -7, 3];
+const double = [2, 5, 5, 10];
+
 //Calcola la media dei cubi dei numeri di un array.
 const result = (arr) => {
     const cubi = arr.map((n) => n ** 3).reduce((acc, curr) => acc + curr, 0);
@@ -33,8 +35,16 @@ console.log(result2(nums, 7));
 
 //Calcola la somma dei quadrati solo dei numeri maggiori di zero.
 const result3 = (arr) => {
-    const quadri = arr.filter((n) => n > 0).map(n => n * n).reduce((acc, curr) => acc + curr, 0);
+    const quadri = arr.filter((n) => n > 0).map(n => n ** 2).reduce((acc, curr) => acc + curr, 0);
     return quadri;
 }
-
 console.log(result3(nums1));
+
+//Dato un array con elementi ripetuti, restituiscilo senza duplicati.
+//un Set è una collezione di valori unici.
+// IN PRATICA:
+//new Set(arr) → crea un Set che rimuove i duplicati.
+//[...Set] → converte di nuovo il Set in array.
+
+const result4 = (arr) => [...new Set(arr)];
+console.log(result4(double))
