@@ -1,5 +1,5 @@
 'use strict';
-const nums = [2, 4, 7, 8, 5];
+const nums = [2, 4, 7, 8, 8];
 //Calcola la media dei cubi dei numeri di un array.
 const result = (arr) => {
     const cubi = arr.map((n) => n ** 3).reduce((acc, curr) => acc + curr, 0);
@@ -25,3 +25,8 @@ const result1 = (arr) => {
 console.log(result1(nums));
 
 //La funzione riceve un array e un numero limite, e restituisce la somma dei numeri che lo superano.
+const result2 = (arr, val) => {
+        return arr.filter(n => n > val).reduce((acc, curr) => acc + curr, 0)
+    }
+
+console.log(result2(nums, 7));
