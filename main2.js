@@ -22,4 +22,6 @@ const result1 = (arr) => {
     }
     return pari - dispari;
 }
-console.log(result1(nums))
+console.log(result1(nums));
+
+//La funzione riceve un array e un numero limite, e restituisce la somma dei numeri che lo superano.
