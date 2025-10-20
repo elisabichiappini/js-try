@@ -72,3 +72,15 @@ const result8 = (arr) => {
 }
 
 console.log(result8(nums));
+//alternativa
+const result9 = (arr) => {
+    let somma = 0;
+    arr.forEach((element, index) => {
+        if(index % 2 === 0){
+            somma += element;
+        }
+    });
+    return somma; 
+}
+
+console.log(result9(nums));
