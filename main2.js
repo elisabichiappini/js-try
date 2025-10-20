@@ -95,3 +95,10 @@ const result8 = (arr) => {
     return secondo;
 }
 console.log(result8(nums));
+
+//Dato un testo, restituisci quante parole contiene.
+const result9 = (str) => {
+    return str.trim().split(/\s+/).length;
+}
+
+console.log(result9(testo));
