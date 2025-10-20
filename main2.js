@@ -16,10 +16,10 @@ const result1 = (arr) => {
     //trova i numeri pari
     let pari = 0;
     let dispari = 0;
-    for(let n of arr) {
-        if(n % 2 === 0) {
+    for (let n of arr) {
+        if (n % 2 === 0) {
             pari += n;
-        }else {
+        } else {
             dispari += n;
         }
     }
@@ -29,8 +29,8 @@ console.log(result1(nums));
 
 //La funzione riceve un array e un numero limite, e restituisce la somma dei numeri che lo superano.
 const result2 = (arr, val) => {
-        return arr.filter(n => n > val).reduce((acc, curr) => acc + curr, 0)
-    }
+    return arr.filter(n => n > val).reduce((acc, curr) => acc + curr, 0)
+}
 console.log(result2(nums, 7));
 
 //Calcola la somma dei quadrati solo dei numeri maggiori di zero.
@@ -40,11 +40,26 @@ const result3 = (arr) => {
 }
 console.log(result3(nums1));
 
-//Dato un array con elementi ripetuti, restituiscilo senza duplicati.
-//un Set è una collezione di valori unici.
-// IN PRATICA:
-//new Set(arr) → crea un Set che rimuove i duplicati.
-//[...Set] → converte di nuovo il Set in array.
+/*Dato un array con elementi ripetuti, restituiscilo senza duplicati.
+un Set è una collezione di valori unici.
+IN PRATICA:
+new Set(arr) → crea un Set che rimuove i duplicati.
+[...Set] → converte di nuovo il Set in array. */
 
 const result4 = (arr) => [...new Set(arr)];
-console.log(result4(double))
+console.log(result4(double));
+
+//Dato un testo, restituisci quante vocali contiene.
+
+const testo = 'Ciao sono elisa';
+const vocali = ['a', 'e', 'i', 'o', 'u'];
+const result5 = (str) => {
+    let contatore = 0;
+    for (let c of str) {
+        if (vocali.includes(c)) {
+            contatore++;
+        }
+    }
+    return contatore;
+}
+console.log(result5(testo));
