@@ -7,6 +7,10 @@ const obj = [
     {valore: 3},
     {valore: 4}
 ];
+const testo = 'Ciao sono elisa chiappini e ho sostenuto un esame di matematica e un esame di storia';
+const vocali = ['a', 'e', 'i', 'o', 'u'];
+const ciao = 'ciao';
+const misto = ['c', 3, 2, 'e'];
 
 //Calcola la media dei cubi dei numeri di un array.
 const result = (arr) => {
@@ -55,8 +59,6 @@ const result4 = (arr) => [...new Set(arr)];
 console.log(result4(double));
 
 //Dato un testo, restituisci quante vocali contiene.
-const testo = 'Ciao sono elisa';
-const vocali = ['a', 'e', 'i', 'o', 'u'];
 const result5 = (str) => {
     let contatore = 0;  
     for (let c of str) {
@@ -97,8 +99,50 @@ const result8 = (arr) => {
 console.log(result8(nums));
 
 //Dato un testo, restituisci quante parole contiene.
+//.trim() -> toglie gli spazi
 const result9 = (str) => {
     return str.trim().split(/\s+/).length;
 }
-
 console.log(result9(testo));
+
+//rovescia una stringa 'ciao'.
+const bonus = (str) => {
+    //prendi l'array, dividi la stringa in lettere di un array, inverti, unisci in una stringa
+    return ciao.split('').reverse().join('');
+}
+console.log(bonus(ciao));
+
+//verifica se una parola è palindroma
+const bonus1 = (str) => {
+    const invertita = str.split('').reverse().join('');
+    if(invertita.toLowerCase() === str.toLowerCase()) {
+        return console.log('la parola è palindroma') 
+    } else {
+        return console.log('questa parola non è palindroma')
+    }
+}
+bonus1('Anna');
+
+//somma di numeri dispari al quadrato. combina filter, map e reduce in una sola riga
+const bonus2 = (arr) => {
+    return arr.filter(n => n % 2 !== 0).map(n => n ** 3).reduce((acc, curr) => acc + curr, 0);
+}
+console.log(bonus2(nums));
+
+//conta quante volte ogni parola appare in una frase e restituisci un oggetto del tipo: {parola: conteggio}
+const bonus3 = (arr) => {
+    let contatore = {}; //restituisce un oggetto
+    const parole = arr.toLowerCase().split(' ');
+    for(let p of parole) {
+        contatore[p] = (contatore[p] || 0) +1;
+    }
+    return contatore;
+}
+console.log(bonus3(testo));
+
+//estrai solo numeri da un array misto (stringhe + numeri), filtra solo elementi numerici
+const bonus4 = (arr) => {
+    return arr.filter(e => typeof e === 'number');
+}
+
+console.log(bonus4(misto))
