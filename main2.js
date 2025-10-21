@@ -144,5 +144,4 @@ console.log(bonus3(testo));
 const bonus4 = (arr) => {
     return arr.filter(e => typeof e === 'number');
 }
-
 console.log(bonus4(misto))
